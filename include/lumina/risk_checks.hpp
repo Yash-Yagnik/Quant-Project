@@ -19,7 +19,7 @@ public:
       total_notional_(0), is_killed_(false) {}
 
   /// Returns true if order is allowed, false if risk would be breached.
-  bool check_order(Price price, Qty qty, Side side) const {
+  bool check_order(Price price, Qty qty, Side /* side */) const {
     if (is_killed_.load(std::memory_order_acquire))
       return false;
     if (qty <= 0 || qty > max_order_qty_)
