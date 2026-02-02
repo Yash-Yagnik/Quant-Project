@@ -1,0 +1,14 @@
+# Lumina-HFT backtest config
+tick_size: 0.01
+latency_mean_us: 50
+latency_std_us: 10
+impact_eta: 0.1
+impact_V: 1e6
+spread_bps: 5
+seed: 42
+
+# Avellaneda-Stoikov
+gamma: 0.1
+sigma: 0.02
+T_seconds: 3600
+k: 1.5
