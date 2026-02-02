@@ -18,13 +18,15 @@ option(USE_AVX512 "Enable AVX-512 SIMD" ON)
 # Compiler flags for low latency
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
-  add_compile_options($<$<CONFIG:Release>:-O3 -march=native -DNDEBUG>)
+  add_compile_options($<$<CONFIG:Release>:-O3>)
+  add_compile_options($<$<CONFIG:Release>:-march=native>)
   if(USE_AVX512)
-    add_compile_options($<$<CONFIG:Release>:-mavx512f -mavx512dq>)
+    add_compile_options($<$<CONFIG:Release>:-mavx512f>)
+    add_compile_options($<$<CONFIG:Release>:-mavx512dq>)
   endif()
 elseif(MSVC)
   add_compile_options(/W4 /permissive-)
-  add_compile_options($<$<CONFIG:Release>:/O2 /DNDEBUG>)
+  add_compile_options($<$<CONFIG:Release>:/O2>)
 endif()
 
 # Dependencies: FetchContent for GTest, Benchmark, fmt
