@@ -1,5 +1,7 @@
 # Lumina-HFT: Multi-Threaded Liquidity Provision Framework
 
+# Disclaimer (This was fully made in Cursor)
+
 A full-stack HFT system combining a high-performance C++20/23 execution core with a Python-based research and backtesting environment.
 
 ## Architecture
